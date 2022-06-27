@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 19,
+   "execution_count": 93,
    "id": "87762de5",
    "metadata": {},
    "outputs": [],
@@ -18,7 +18,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
+   "execution_count": 94,
    "id": "73e911f1",
    "metadata": {},
    "outputs": [
@@ -51,7 +51,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+   "execution_count": 95,
    "id": "d7d1a1a7",
    "metadata": {},
    "outputs": [],
@@ -62,7 +62,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": 96,
    "id": "754f6cbf",
    "metadata": {},
    "outputs": [
@@ -70,8 +70,8 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Global Storms on Mars Launch Dust Towers Into the Sky\n",
-      "A Mars Dust Tower Stands Out Dust storms are common on Mars. But every decade or so, something unpredictable happens: a series of runaway storms break out, covering the entire planet in a dusty haze.\n"
+      "From JPL's Mailroom to Mars and Beyond\n",
+      "Bill Allen has thrived as the mechanical systems design lead for three Mars rover missions, but he got his start as a teenager sorting letters for the NASA center.\n"
      ]
     }
    ],
@@ -91,7 +91,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 23,
+   "execution_count": 97,
    "id": "3764dfbe",
    "metadata": {},
    "outputs": [],
@@ -101,7 +101,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
+   "execution_count": 98,
    "id": "62c21786",
    "metadata": {},
    "outputs": [
@@ -136,7 +136,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 25,
+   "execution_count": 99,
    "id": "f358ad09",
    "metadata": {},
    "outputs": [
@@ -160,7 +160,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 26,
+   "execution_count": 100,
    "id": "b1bac4dc",
    "metadata": {},
    "outputs": [],
@@ -170,7 +170,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 27,
+   "execution_count": 101,
    "id": "e3581f7f",
    "metadata": {},
    "outputs": [],
@@ -180,7 +180,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 40,
+   "execution_count": 102,
    "id": "469541b9",
    "metadata": {},
    "outputs": [
@@ -207,57 +207,123 @@
        " 8          Recorded By:           Egyptian astronomers]"
       ]
      },
-     "execution_count": 40,
+     "execution_count": 102,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
-    "result = pd.read_html(url)\n",
-    "result"
+    "result1 = pd.read_html(url)\n",
+    "result1"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 41,
+   "execution_count": 103,
    "id": "261e01fa",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "df=result[0]\n",
-    "df.columns = ['','Mars','Earth']\n",
-    "df.set_index('', inplace = True)\n",
-    "df\n",
-    "result1 = df.to_html()\n"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 43,
-   "id": "e5067fa3",
    "metadata": {},
    "outputs": [
     {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "\n"
-     ]
-    },
-    {
-     "name": "stderr",
-     "output_type": "stream",
-     "text": [
-      "[WDM] - ====== WebDriver manager ======\n",
-      "INFO:WDM:====== WebDriver manager ======\n",
-      "[WDM] - Current google-chrome version is 102.0.5005\n",
-      "INFO:WDM:Current google-chrome version is 102.0.5005\n",
-      "[WDM] - Get LATEST chromedriver version for 102.0.5005 google-chrome\n",
-      "INFO:WDM:Get LATEST chromedriver version for 102.0.5005 google-chrome\n",
-      "[WDM] - Driver [C:\\Users\\dans1\\.wdm\\drivers\\chromedriver\\win32\\102.0.5005.61\\chromedriver.exe] found in cache\n",
-      "INFO:WDM:Driver [C:\\Users\\dans1\\.wdm\\drivers\\chromedriver\\win32\\102.0.5005.61\\chromedriver.exe] found in cache\n"
-     ]
-    },
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Category</th>\n",
+       "      <th>Mars</th>\n",
+       "      <th>Earth</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>Mars - Earth Comparison</td>\n",
+       "      <td>Mars</td>\n",
+       "      <td>Earth</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>Diameter:</td>\n",
+       "      <td>6,779 km</td>\n",
+       "      <td>12,742 km</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>Mass:</td>\n",
+       "      <td>6.39 × 10^23 kg</td>\n",
+       "      <td>5.97 × 10^24 kg</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>Moons:</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>Distance from Sun:</td>\n",
+       "      <td>227,943,824 km</td>\n",
+       "      <td>149,598,262 km</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>Length of Year:</td>\n",
+       "      <td>687 Earth days</td>\n",
+       "      <td>365.24 days</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>6</th>\n",
+       "      <td>Temperature:</td>\n",
+       "      <td>-87 to -5 °C</td>\n",
+       "      <td>-88 to 58°C</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "                  Category             Mars            Earth\n",
+       "0  Mars - Earth Comparison             Mars            Earth\n",
+       "1                Diameter:         6,779 km        12,742 km\n",
+       "2                    Mass:  6.39 × 10^23 kg  5.97 × 10^24 kg\n",
+       "3                   Moons:                2                1\n",
+       "4       Distance from Sun:   227,943,824 km   149,598,262 km\n",
+       "5          Length of Year:   687 Earth days      365.24 days\n",
+       "6             Temperature:     -87 to -5 °C      -88 to 58°C"
+      ]
+     },
+     "execution_count": 103,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df=result1[0]\n",
+    "df.columns = ['Category','Mars','Earth']\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 109,
+   "id": "e5067fa3",
+   "metadata": {},
+   "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
@@ -270,25 +336,34 @@
     "titles=[]\n",
     "img_urls=[]\n",
     "new_urls=[]\n",
-    "executable_path = {'executable_path': ChromeDriverManager().install()}\n",
     "browser = Browser('chrome', **executable_path, headless=False)\n",
     "url = 'https://marshemispheres.com/'\n",
     "browser.visit(url)\n",
     "html = browser.html\n",
     "soup = bs(html, 'html.parser')\n",
     "results = soup.find_all('div', class_ = 'item')\n",
+    "browser.quit()\n",
+    "#print(results[0].div.a['href'])\n",
+    "#print(len(results))\n",
     "for x in range(len(results)):\n",
+    "    browser = Browser('chrome', **executable_path, headless=False)\n",
+    "    url = 'https://marshemispheres.com/'\n",
+    "    browser.visit(url)\n",
+    "    html = browser.html\n",
+    "    soup = bs(html, 'html.parser')\n",
+    "    results = soup.find_all('div', class_ = 'item')\n",
     "    link = results[x].div.a['href']\n",
     "    new_url = (f'{url}{link}')\n",
     "    new_urls.append(new_url)\n",
-    "\n",
+    "    browser.quit()\n",
+    "#     browser.visit(new_url)\n",
     "    \n",
     "print(new_urls)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 44,
+   "execution_count": 110,
    "id": "3f5786b2",
    "metadata": {},
    "outputs": [
@@ -296,7 +371,7 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "['https://marshemispheres.com/cerberus.htmlimages/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg', 'https://marshemispheres.com/schiaparelli.htmlimages/3778f7b43bbbc89d6e3cfabb3613ba93_schiaparelli_enhanced.tif_full.jpg', 'https://marshemispheres.com/syrtis.htmlimages/555e6403a6ddd7ba16ddb0e471cadcf7_syrtis_major_enhanced.tif_full.jpg', 'https://marshemispheres.com/valles.htmlimages/b3c7c6c9138f57b4756be9b9c43e3a48_valles_marineris_enhanced.tif_full.jpg']\n",
+      "['https://marshemispheres.com/cerberus.htmlimages/full.jpg', 'https://marshemispheres.com/schiaparelli.htmlimages/schiaparelli_enhanced-full.jpg', 'https://marshemispheres.com/syrtis.htmlimages/syrtis_major_enhanced-full.jpg', 'https://marshemispheres.com/valles.htmlimages/valles_marineris_enhanced-full.jpg']\n",
       "['Cerberus Hemisphere', 'Schiaparelli Hemisphere', 'Syrtis Major Hemisphere', 'Valles Marineris Hemisphere']\n"
      ]
     }
@@ -304,26 +379,29 @@
    "source": [
     "results=[]\n",
     "for x in range(len(new_urls)):\n",
+    "    browser = Browser('chrome', **executable_path, headless=False)\n",
+    "    url = 'https://marshemispheres.com/'\n",
+    "    browser.visit(url)\n",
     "    browser.visit(new_urls[x])\n",
     "    html = browser.html\n",
     "    soup = bs(html, 'html.parser')\n",
-    "    result = soup.find('img', class_ = 'wide-image')\n",
-    "    img_url=result['src']\n",
+    "    result = soup.find('div', class_ = 'downloads')\n",
+    "    img_url=result.a['href']\n",
     "    i_url=(f'{new_urls[x]}{img_url}')\n",
     "    img_urls.append(i_url)\n",
     "    result = soup.find('h2', class_ = 'title').text\n",
     "    title=result.replace(' Enhanced', '')\n",
     "    titles.append(title)\n",
+    "    browser.quit()\n",
     "    \n",
     "print(img_urls)\n",
-    "print(titles) \n",
-    "browser.quit()\n",
+    "print(titles)    \n",
     "    "
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 111,
    "id": "df99b718",
    "metadata": {},
    "outputs": [
@@ -340,7 +418,7 @@
        "  'img_url': 'https://marshemispheres.com/valles.htmlimages/valles_marineris_enhanced-full.jpg'}]"
       ]
      },
-     "execution_count": 15,
+     "execution_count": 111,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -352,59 +430,6 @@
     "    hemisphere_image_urls.append(diction)\n",
     "    \n",
     "hemisphere_image_urls"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 16,
-   "id": "48c06d00",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "{'news': [\"How NASA's Mars Helicopter Will Reach the Red Planet's Surface\",\n",
-       "  'The small craft will seek to prove that powered, controlled flight is possible on another planet. But just getting it onto the surface of Mars will take a whole lot of ingenuity.'],\n",
-       " 'image': ['https://spaceimages-mars.com/image/featured/mars1.jpg'],\n",
-       " 'facts': [[                  Category             Mars            Earth\n",
-       "   0  Mars - Earth Comparison             Mars            Earth\n",
-       "   1                Diameter:         6,779 km        12,742 km\n",
-       "   2                    Mass:  6.39 × 10^23 kg  5.97 × 10^24 kg\n",
-       "   3                   Moons:                2                1\n",
-       "   4       Distance from Sun:   227,943,824 km   149,598,262 km\n",
-       "   5          Length of Year:   687 Earth days      365.24 days\n",
-       "   6             Temperature:     -87 to -5 °C      -88 to 58°C,\n",
-       "                         0                              1\n",
-       "   0  Equatorial Diameter:                       6,792 km\n",
-       "   1       Polar Diameter:                       6,752 km\n",
-       "   2                 Mass:  6.39 × 10^23 kg (0.11 Earths)\n",
-       "   3                Moons:          2 ( Phobos & Deimos )\n",
-       "   4       Orbit Distance:       227,943,824 km (1.38 AU)\n",
-       "   5         Orbit Period:           687 days (1.9 years)\n",
-       "   6  Surface Temperature:                   -87 to -5 °C\n",
-       "   7         First Record:              2nd millennium BC\n",
-       "   8          Recorded By:           Egyptian astronomers]],\n",
-       " 'hemispheres': [[{'title': 'Cerberus Hemisphere',\n",
-       "    'img_url': 'https://marshemispheres.com/cerberus.htmlimages/full.jpg'},\n",
-       "   {'title': 'Schiaparelli Hemisphere',\n",
-       "    'img_url': 'https://marshemispheres.com/schiaparelli.htmlimages/schiaparelli_enhanced-full.jpg'},\n",
-       "   {'title': 'Syrtis Major Hemisphere',\n",
-       "    'img_url': 'https://marshemispheres.com/syrtis.htmlimages/syrtis_major_enhanced-full.jpg'},\n",
-       "   {'title': 'Valles Marineris Hemisphere',\n",
-       "    'img_url': 'https://marshemispheres.com/valles.htmlimages/valles_marineris_enhanced-full.jpg'}]]}"
-      ]
-     },
-     "execution_count": 16,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "end_results={}\n",
-    "end_results['news']=[title1, par]\n",
-    "end_results['image']=[featured_image_url]\n",
-    "end_results['facts']=[result1]\n",
-    "end_results['hemispheres']=[hemisphere_image_urls]"
    ]
   }
  ],

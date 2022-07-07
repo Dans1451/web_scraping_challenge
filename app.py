@@ -9,6 +9,14 @@ app = Flask(__name__)
 mongo = PyMongo(app, uri="mongodb://localhost:27017/scraping_challenge")
 
 
+
+    # Run the scrape function
+mars_data = scrape_mars.scrape()
+
+    # Update the Mongo database using update and upsert=True
+mongo.db.scraped.update({}, {"$set": mars_data}, upsert=True)
+
+
 # Route to render index.html template using data from Mongo
 @app.route("/")
 def home():
